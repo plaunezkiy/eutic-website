@@ -16,7 +16,7 @@ const Footer = () => {
   return (
     <div className="w-full border-t flex flex-col items-center">
       {/* by ed uni and eutic */}
-      <div className="w-full lg:w-3/4 p-4 flex items-center justify-center">
+      <div className="w-full lg:w-3/4 p-4 flex flex-col md:flex-row gap-6 items-center justify-center">
         <a href="/">
           <img className="h-20" src="logo.png" alt="eutic_logo" />
         </a>
@@ -27,7 +27,7 @@ const Footer = () => {
             alt="edinburgh_university_logo"
           />
         </a>
-        <div className="flex gap-2 items-center">
+        <div className="order-first md:order-none flex gap-4 items-center">
           <IconLink
             icon={<FaInstagram />}
             link="https://www.instagram.com/eutic24_25/"

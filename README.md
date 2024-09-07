@@ -1,5 +1,12 @@
 <!-- eutic-website.onrender.com. -->
 
+the domain: www.eutic.org.uk
+namecheap config: 
+    1. add A records of GH ips
+    2. add CNAME record of gh pages domain
+    3. verify domain
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
