@@ -2,8 +2,9 @@
 const nextConfig = {
   output: "export",
   distDir: "docs",
-  assetPrefix:
-    "https://raw.githubusercontent.com/plaunezkiy/eutic-website/main/docs",
+  basePath: "/eutic-website",
+  // assetPrefix:
+  //   "https://raw.githubusercontent.com/plaunezkiy/eutic-website/main/docs",
 };
 
 export default nextConfig;
