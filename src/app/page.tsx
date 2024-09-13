@@ -17,16 +17,28 @@ import {
   FaBalanceScale,
   FaGraduationCap,
 } from "react-icons/fa";
+import { MdDiversity1 } from "react-icons/md";
 import { HiPresentationChartLine } from "react-icons/hi2";
 import { PiGraph } from "react-icons/pi";
 
 import React from "react";
 
-const FactCard = ({ fact, icon }: { fact: string; icon: React.ReactNode }) => (
-  <div className="h-36 rounded-lg w-full border-2 border-yellow-500 hover:bg-yellow-500 text-gray-700 hover:text-white flex items-center justify-center shadow hover:shadow-xl duration-300 select-none">
+const FactCard = ({
+  fact,
+  icon,
+  extra,
+}: {
+  fact: string;
+  icon: React.ReactNode;
+  extra?: React.ReactNode;
+}) => (
+  <div className="relative overflow-hidden h-36 px-4 rounded-lg w-full border-2 border-yellow-500 hover:bg-yellow-500 text-gray-700 hover:text-white flex items-center justify-center shadow hover:shadow-xl duration-300 select-none">
+    {extra}
     <div className="flex flex-col items-center gap-2 divide-y-2">
       {icon}
-      <p className="text-2xl font-medium text-center">{fact}</p>
+      <p className="text-2xl font-medium text-center whitespace-pre-wrap">
+        {fact}
+      </p>
     </div>
   </div>
 );
@@ -35,12 +47,25 @@ export default function Home() {
   const facts = [
     {
       label: "Active Since 1998",
+      //26 Years of EUTIC \n
       icon: <FaFortAwesome className="text-5xl" />,
+      extra: (
+        <p className="bg-red-500 z-10 -rotate-45 py-1 px-12 font-medium text-center text-white absolute top-1/3 -left-12">
+          26 Years of EUTIC!
+        </p>
+      ),
     },
 
-    { label: "Over £79,000 AUM", icon: <FaPoundSign className="text-5xl" /> },
+    {
+      label: "Over £92,000 in AUM",
+      icon: <FaPoundSign className="text-5xl" />,
+    },
     { label: "Focused on ESG", icon: <FaLeaf className="text-5xl" /> },
     { label: "400+ Active Members", icon: <FaUsers className="text-5xl" /> },
+    {
+      label: '2024 Society of the Year by "Girls Are INvestors"',
+      icon: <MdDiversity1 className="text-5xl" />,
+    },
     {
       label: "50+ Stock Pitches Annually",
       icon: <HiPresentationChartLine className="text-5xl" />,
@@ -92,7 +117,7 @@ export default function Home() {
         {/* cards with facts */}
         {facts.map((fact, idx) => (
           <div key={idx} className="col-span-1">
-            <FactCard fact={fact.label} icon={fact.icon} />
+            <FactCard fact={fact.label} icon={fact.icon} extra={fact.extra} />
           </div>
         ))}
       </div>

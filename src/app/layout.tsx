@@ -4,7 +4,6 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { MantineProvider } from "@mantine/core";
 import Footer from "@/components/Footer";
-import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "EUTIC",
@@ -19,9 +18,6 @@ export default function RootLayout({
   //#deae29
   return (
     <html lang="en">
-      <Head>
-        <link rel="icon" href="favicon.ico" sizes="any" />
-      </Head>
       <body className="bg-white">
         <MantineProvider defaultColorScheme="light">
           <div className="min-h-screen flex flex-col items-center gap-12">
